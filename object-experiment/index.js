@@ -106,12 +106,25 @@ const newProducts = products.map((pd) =>
 const laptopProducts = Object.values(products).filter(
   (product) => product.category.toLocaleLowerCase() == "laptop",
 );
-console.log(laptopProducts);
+// console.log(laptopProducts);
 
 const boroloxerProducts = Object.values(newProducts).filter(
-  (elem) => elem.isGoriberJonno.toLocaleLowerCase() == "nah",
+  (elem) => elem.isGoriberJonno.toLocaleLowerCase() === "nah",
 );
 
-console.log(boroloxerProducts);
+// console.log(boroloxerProducts);
 
 // console.log(newProducts);
+
+const prod = products.map((pd) => {
+  return {
+    ...pd,
+    isExpensive: pd.price > 50000,
+  };
+});
+
+// console.log(prod);
+
+const expensiveProduct = products.filter((product) => product.price > 50000);
+
+console.log(expensiveProduct);
